@@ -3,8 +3,8 @@ import blogs  from "@/content/blogs.json"
 import type {portfolioType} from "@/type/portfolio"
 
 export default function Home() {
-  let portfolioArray:portfolioType[]=portfolio;
-  let blogsArray:portfolioType[]= blogs;
+  const portfolioArray:portfolioType[]=portfolio;
+  const blogsArray:portfolioType[]= blogs;
   return (
   <>
      <h2>
