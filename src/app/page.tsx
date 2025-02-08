@@ -21,6 +21,12 @@ export default function Home() {
          <p>
           {description}
          </p>
+         <p>
+          {coverImage}
+         </p>
+         <p>
+          {slug}
+         </p>
     </div>
     )}
     <h2>
@@ -38,6 +44,12 @@ export default function Home() {
      <p>
       {description}
      </p>
+     <p>
+          {coverImage}
+         </p>
+         <p>
+          {slug}
+         </p>
 </div>
   )}
     
