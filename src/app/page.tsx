@@ -23,6 +23,23 @@ export default function Home() {
          </p>
     </div>
     )}
+    <h2>
+      <b>
+
+      Portfolio
+      </b>
+     </h2>
+
+    {portfolioArray.map(({coverImage,description,id,slug,title}:portfolioType)=>
+     <div key={id}>
+     <h3>
+      {title}
+     </h3>
+     <p>
+      {description}
+     </p>
+</div>
+  )}
     
   </>
   );
