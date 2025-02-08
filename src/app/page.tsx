@@ -1,6 +1,7 @@
 import portfolio  from "@/content/portfolio.json"
 import blogs  from "@/content/blogs.json"
 import type {portfolioType} from "@/type/portfolio"
+import Image from 'next/image';
 
 export default function Home() {
   const portfolioArray:portfolioType[]=portfolio;
@@ -21,9 +22,10 @@ export default function Home() {
          <p>
           {description}
          </p>
-         <p>
-          {coverImage}
-         </p>
+         <Image src={process.env.NEXT_PUBLIC_CLOUDINARY_URL+coverImage} alt='cover image' height={200} width={200}  priority/>
+
+    
+      
          <p>
           {slug}
          </p>
@@ -45,7 +47,7 @@ export default function Home() {
       {description}
      </p>
      <p>
-          {coverImage}
+     <Image src={process.env.NEXT_PUBLIC_CLOUDINARY_URL+coverImage} alt='cover image' height={200} width={200}  priority={false}/>
          </p>
          <p>
           {slug}

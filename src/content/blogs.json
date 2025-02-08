@@ -4,7 +4,7 @@
     "title": "Some blog 1",
     "description": "Such an interesting blog!",
     "coverImage":
-      "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
+      "image/upload/v1715665203/cld-sample.jpg"
   },
   {
     "id": "2",
@@ -12,5 +12,5 @@
     "title": "Some blog 2",
     "description": "Such an interesting blog as well!",
     "coverImage":
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50"
+      "image/upload/v1715665203/cld-sample.jpg"
   }]
