@@ -1,10 +1,13 @@
+
 import type {portfolioType} from "@/type/portfolio";
 import Image from 'next/image';
+
 type BlogListType={
     blogs:portfolioType[]
 }
-const BlogList = ({blogs}:BlogListType) => {
-    console.log(blogs)
+const BlogList = async({blogs}:BlogListType) => {
+
+     
     return (  <>
     <h2>
       <b>
