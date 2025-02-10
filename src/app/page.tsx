@@ -12,8 +12,8 @@ export default async function Home() {
 
   return (
   <>  
-     <BlogList blogs={blogsList}/>
-     <PortFolioList blogs={portfolioArray}/>
+    <BlogList blogs={blogsList}/>
+    <PortFolioList blogs={portfolioArray}/>
   </>
   );
 }

@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server';
 import blogs from "@/content/blogs.json"
+import { portfolioType } from '@/type/portfolio';
 
 export async function GET(){
-  const blogsPromise=  new   Promise((res)=>{
+  const blogsPromise:Promise<portfolioType[]>=  new   Promise((res)=>{
     setTimeout(()=>{
         res(blogs)
     },2000)
       
    })
-  const a = await blogsPromise;
+  const a:portfolioType[]= await blogsPromise;
    return NextResponse.json(a)
 }
