@@ -9,6 +9,7 @@ export async function GET(){
     },2000)
       
    })
+   
   const a:portfolioType[]= await blogsPromise;
    return NextResponse.json(a)
 }

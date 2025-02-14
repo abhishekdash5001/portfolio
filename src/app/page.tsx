@@ -7,13 +7,23 @@ import { getData } from '@/server-hooks/GetData';
 
 
 export default async function Home() {
-  const portfolioArray:portfolioType[]=await getData('/api/portfolios');
-  const blogsList:portfolioType[]|undefined=await getData('/api/blogs');
+  try{
+    const portfolioArray:portfolioType[]=await getData('/api/portfolios');
+    const blogsList:portfolioType[]|undefined=await getData('/api/blogs');
+    return (
+      <>  
+        <BlogList blogs={blogsList}/>
+        <PortFolioList blogs={portfolioArray}/>
+      </>
+      );
+  }
+  catch(err){
+    console.log(err,"Error in fetching API")
+    return <>
+    Error in fetching API
+    </>
+  }
 
-  return (
-  <>  
-    <BlogList blogs={blogsList}/>
-    <PortFolioList blogs={portfolioArray}/>
-  </>
-  );
+ 
+  
 }
