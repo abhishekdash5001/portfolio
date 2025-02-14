@@ -1,22 +1,29 @@
-import portfolio  from "@/content/portfolio.json"
-import blogs  from "@/content/blogs.json"
+
 import type {portfolioType} from "@/type/portfolio"
 import BlogList from '@/components/Blogs/BlogList';
 import PortFolioList from '@/components/Portfolios/PortfolioList';
+import { getData } from '@/server-hooks/GetData';
 
 
-export default function Home() {
-  const portfolioArray:portfolioType[]=portfolio;
-  const blogsArray:portfolioType[]= blogs;
-  return (
-  <>
-     
-     <BlogList blogs={blogsArray}/>
-    
-   
 
-   <PortFolioList blogs={portfolioArray}/>
+export default async function Home() {
+  try{
+    const portfolioArray:portfolioType[]=await getData('/api/portfolios');
+    const blogsList:portfolioType[]|undefined=await getData('/api/blogs');
+    return (
+      <>  
+        <BlogList blogs={blogsList}/>
+        <PortFolioList blogs={portfolioArray}/>
+      </>
+      );
+  }
+  catch(err){
+    console.log(err,"Error in fetching API")
+    return <>
+    Error in fetching API
+    </>
+  }
 
-  </>
-  );
+ 
+  
 }
