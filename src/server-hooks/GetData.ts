@@ -1,8 +1,12 @@
 
 'use server'
 import type {portfolioType} from "@/type/portfolio";
-import portfolio from "@/content/portfolio.json"
-export async function getData(url:string){
+
+
+interface IGetData{
+  data:portfolioType[];
+}
+export async function getData(url:string,cache:RequestCache){
     
 
    return await fetchData();
@@ -10,13 +14,14 @@ export async function getData(url:string){
  //fix this 
    async function fetchData(){
     try{
-      const response = await fetch(process.env.API_URL+url);
-      const data:portfolioType[] = await response.json();
+      const response = await fetch(process.env.API_URL+url,{cache});
+
+      const data:IGetData = await response.json();
        return data
     }catch(err){
       console.log(err)
-      const data:portfolioType[]=portfolio;
-       return data
+      // const data:IgetData=portfolio;
+      //  return data
     }
        
     }

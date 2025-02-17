@@ -3,11 +3,9 @@ import type {portfolioType} from "@/type/portfolio";
 import Image from 'next/image';
 
 type BlogListType={
-    blogs:portfolioType[]
+    blogs:portfolioType[]|undefined
 }
 const BlogList = async({blogs}:BlogListType) => {
-
-     
     return (  <>
     <h2>
       <b>
@@ -15,6 +13,7 @@ const BlogList = async({blogs}:BlogListType) => {
       Blogs
       </b>
      </h2>
+
     {blogs?.map(({coverImage,description,id,slug,title}:portfolioType)=>
     <div key={id}>
          <h3>
