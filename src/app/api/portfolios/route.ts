@@ -9,5 +9,5 @@ export async function GET(){
         },1500)
     })
     const response:portfolioType[]= await promise;
-    return NextResponse.json(response)
+    return NextResponse.json({data:response})
 }
