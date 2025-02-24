@@ -16,11 +16,17 @@ App.get("/",(req,res)=>{
 })
 
 App.get("/api/blogs",(req,res)=>{
-   res.send({data:blogs})
+    setTimeout(()=>{
+        res.send({data:blogs})
+    },2000)
+
 })
 
 App.get("/api/portfolios",(req,res)=>{
-    res.send({data:portfolio})
+    setTimeout(()=>{
+        res.send({data:portfolio})
+    },3000)
+   
  })
 function startServer(){
  

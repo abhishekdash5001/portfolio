@@ -6,8 +6,8 @@ import type {portfolioType} from "@/type/portfolio";
 interface IGetData{
   data:portfolioType[];
 }
-export async function getData(url:string,cache:RequestCache){
-    
+export async function getData(url:string,cache?:RequestCache){
+
 
    return await fetchData();
   
