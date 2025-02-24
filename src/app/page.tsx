@@ -2,32 +2,45 @@
 import type {portfolioType} from "@/type/portfolio"
 import BlogList from '@/components/Blogs/BlogList';
 import PortFolioList from '@/components/Portfolios/PortfolioList';
-import { getData } from '@/server-hooks/GetData';
+import { Suspense } from 'react';
+
 
 export interface IPortFolioGet{
   data:portfolioType[]
 }
 
 export default async function Home() {
-  try{
-   const portfolioData:IPortFolioGet|undefined=await getData('/api/portfolios',"no-cache");
-   const blogListData:IPortFolioGet|undefined=await getData('/api/blogs',"no-cache");
+ 
+  //  const portfolioData:IPortFolioGet|undefined=await getData('/api/portfolios',"no-cache");
+  //  const blogListData:IPortFolioGet|undefined=await getData('/api/blogs',"no-cache");
+
+  //sequental api call
+  //  const portfolioData:IPortFolioGet|undefined=await getData('/api/portfolios',"no-cache");
+  //  const blogListData:IPortFolioGet|undefined=await getData('/api/blogs',"no-cache");
+
+//   const portfolioPromise = getData('/api/portfolios',"no-cache");
+//   const blogsPromise = getData('/api/blogs',"no-cache");
+
+//  const [portfolioData,blogListData] =await Promise.all([portfolioPromise,blogsPromise])
   
   
     return (
-      <>  
-     { portfolioData?  <BlogList blogs={blogListData?.data}/>:null}
-    {  portfolioData?  <PortFolioList portfolios={portfolioData?.data}/>:null}
+      <> 
+      <div>
+      <Suspense fallback={<>Loading Blogs ..</>}>
+      <BlogList/>
+      </Suspense>
+      </div>
+   
+     <Suspense fallback={<>Loading Portfolios ..</>}>
+     <PortFolioList/>
+     </Suspense>
+
       </>
       );
   }
-  catch(err){
-    console.log(err,"Error in fetching API")
-    return <>
-    Error in fetching API
-    </>
-  }
+ 
 
  
   
-}
+
