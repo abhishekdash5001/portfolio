@@ -1,16 +1,16 @@
-[{
-    "id": "1",
-    "slug": "some-blog-1",
-    "title": "Some blog 1 server",
+[
+  {
+    "id": 14,
+    "slug": "some-blog-14",
+    "title": "some blog 14",
     "description": "Such an interesting blog!",
-    "coverImage":
-      "image/upload/v1715665203/cld-sample.jpg"
+    "coverImage": "image/upload/v1715665203/cld-sample.jpg"
   },
   {
-    "id": "2",
-    "slug": "some-blog-2",
-    "title": "Some blog 2",
+    "id": 16,
+    "slug": "some-blog-16",
+    "title": "some blog 16",
     "description": "Such an interesting blog as well!",
-    "coverImage":
-      "image/upload/v1715665203/cld-sample.jpg"
-  }]
+    "coverImage": "image/upload/v1715665203/cld-sample.jpg"
+  }
+]
