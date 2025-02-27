@@ -9,6 +9,7 @@ export interface IPortFolioGet{
   data:portfolioType[]
 }
 
+export const  revalidate = 20; // this works in production will revalidte after 20 sec
 export default async function Home() {
  
   //  const portfolioData:IPortFolioGet|undefined=await getData('/api/portfolios',"no-cache");
@@ -22,7 +23,7 @@ export default async function Home() {
 //   const blogsPromise = getData('/api/blogs',"no-cache");
 
 //  const [portfolioData,blogListData] =await Promise.all([portfolioPromise,blogsPromise])
-  
+ 
   
     return (
       <> 

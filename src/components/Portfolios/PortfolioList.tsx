@@ -9,7 +9,7 @@ export interface IPortFolioGet{
   }
   
 const PortFolioList = async() => {
-    const portfolioData:IPortFolioGet|undefined=  await getData('/api/portfolios',"no-cache");
+    const portfolioData:IPortFolioGet|undefined=  await getData('/api/portfolios');
     if(portfolioData){
         const data:portfolioType[]= portfolioData.data;
         return (  <>
