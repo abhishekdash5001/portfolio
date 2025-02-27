@@ -16,16 +16,20 @@ App.get("/",(req,res)=>{
 })
 
 App.get("/api/blogs",(req,res)=>{
-    setTimeout(()=>{
-        res.send({data:blogs})
-    },2000)
+    randomizer();
+    console.log("fetching for node")
+  const blogsPath = path.join(pathToContent ,'blogs.json');
+  const blogs = fs.readFileSync(blogsPath,'utf-8');
+  res.send({data:JSON.parse(blogs)})
+  
 
 })
 
 App.get("/api/portfolios",(req,res)=>{
-    setTimeout(()=>{
-        res.send({data:portfolio})
-    },3000)
+    const portfoliosPath = path.join(pathToContent,'portfolio.json');
+    const portfolios = fs.readFileSync(portfoliosPath,'utf-8');
+    res.send({data:JSON.parse(portfolios)})
+
    
  })
 function startServer(){
