@@ -19,11 +19,12 @@ App.get("/",(req,res)=>{
 
 App.get("/api/blogs",(req,res)=>{
     randomizer();
+
+    console.log("fetching for node")
   const blogsPath = path.join(pathToContent ,'blogs.json');
-  const blogs = fs.readFileSync(blogsPath,'utf-8')
-    setTimeout(()=>{
-        res.send({data:JSON.parse(blogs)})
-    },2000)
+  const blogs = fs.readFileSync(blogsPath,'utf-8');
+  res.send({data:JSON.parse(blogs)})
+  
 
 })
 
@@ -31,9 +32,9 @@ App.get("/api/portfolios",(req,res)=>{
     const portfoliosPath = path.join(pathToContent,'portfolio.json');
     const portfolios = fs.readFileSync(portfoliosPath,'utf-8');
 
-    setTimeout(()=>{
-        res.send({data:JSON.parse(portfolios)})
-    },3000)
+    res.send({data:JSON.parse(portfolios)})
+
+
    
  })
 function startServer(){

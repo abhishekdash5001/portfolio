@@ -8,7 +8,7 @@ import { getData } from '@/server-hooks/GetData';
 //     blogs:portfolioType[]|undefined
 // }
 const BlogList = async() => {
-    const blogListData:IPortFolioGet|undefined=await getData('/api/blogs',"no-cache");
+    const blogListData:IPortFolioGet|undefined=await getData('/api/blogs');
     if(blogListData){
         const {data}= blogListData;
         return (  <>

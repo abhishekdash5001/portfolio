@@ -5,9 +5,8 @@ import { portfolioType } from '@/type/portfolio';
 export async function GET(){
 
   const blogsPromise:Promise<portfolioType[]>=  new   Promise((res)=>{
-    setTimeout(()=>{
-        res(blogs)
-    },2000)
+    res(blogs)
+   
       
    })
    
