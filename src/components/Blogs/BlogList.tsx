@@ -7,8 +7,12 @@ import { getData } from '@/server-hooks/GetData';
 // type BlogListType={
 //     blogs:portfolioType[]|undefined
 // }
+
+
 const BlogList = async() => {
-    const blogListData:IPortFolioGet|undefined=await getData('/api/blogs');
+    const blogListData:IPortFolioGet|undefined=await getData('/api/blogs',"blogs");
+
+
     if(blogListData){
         const {data}= blogListData;
         return (  <>

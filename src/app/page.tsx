@@ -9,7 +9,8 @@ export interface IPortFolioGet{
   data:portfolioType[]
 }
 
-export const  revalidate = 20; // this works in production will revalidte after 20 sec
+// export const  revalidate = 20;
+ // this works in production will revalidte after 20 sec
 export default async function Home() {
  
   //  const portfolioData:IPortFolioGet|undefined=await getData('/api/portfolios',"no-cache");
