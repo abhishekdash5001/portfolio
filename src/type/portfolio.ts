@@ -1,7 +1,8 @@
 export type portfolioType={
-    id:string,
-    slug:string,
-    title:string,
+    companyName:string,
+    companyStartDate:string,
+    companyEndDate:string,
+    designation:string,
     description:string,
-    coverImage:string
+    companyImage:string
 }

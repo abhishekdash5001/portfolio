@@ -4,9 +4,10 @@ import type { portfolioType } from "@/type/portfolio";
 
 
 
-interface IGetData {
+type IGetData= {
   data: portfolioType[];
 }
+
 // interface IRevalidate{
 //   revalidate:number
 // }

@@ -1,9 +1,7 @@
-import { getData } from '@/server-hooks/GetData';
+import { getData } from '@/server-hooks/portfolios/getData';
 import type {portfolioType} from "@/type/portfolio";
 import Image from 'next/image';
-// type BlogListType={
-//     portfolios:portfolioType[]
-// }
+
 export interface IPortFolioGet{
     data:portfolioType[]
   }
@@ -19,20 +17,18 @@ const PortFolioList = async() => {
              Portfolio
              </b>
             </h2>
-           {data?.map(({coverImage,description,id,slug,title}:portfolioType)=>
-           <div key={id}>
+           {data?.map(({companyName,description,companyImage}:portfolioType)=>
+           <div key={companyName}>
                 <h3>
-                 {title}
+                 {companyName}
                 </h3>
-                <p>
-                 {description}
-                </p>
-                <Image src={process.env.NEXT_PUBLIC_CLOUDINARY_URL+coverImage} alt='cover image' height={200} width={200}  priority/>
+               
+                <Image src={companyImage} alt='cover image' height={200} width={200}  priority/>
        
            
              
                 <p>
-                 {slug}
+                 {description}
                 </p>
            </div>
            )}

@@ -1,16 +1,16 @@
 
-import type {portfolioType} from "@/type/portfolio";
+import type {blogType} from "@/type/blogs";
 import Image from 'next/image';
-import { IPortFolioGet } from '../Portfolios/PortfolioList';
-import { getData } from '@/server-hooks/GetData';
 
-// type BlogListType={
-//     blogs:portfolioType[]|undefined
-// }
+import { getData } from '@/server-hooks/blogs/getData';
+
+type BlogListType={
+    data:blogType[];
+}
 
 
 const BlogList = async() => {
-    const blogListData:IPortFolioGet|undefined=await getData('/api/blogs',"blogs");
+    const blogListData:BlogListType|undefined=await getData('/api/blogs',"blogs");
 
 
     if(blogListData){
@@ -23,7 +23,7 @@ const BlogList = async() => {
               </b>
              </h2>
         
-            {data?.map(({coverImage,description,id,slug,title}:portfolioType)=>
+            {data?.map(({coverImage,description,id,slug,title}:blogType)=>
             <div key={id}>
                  <h3>
                   {title}
