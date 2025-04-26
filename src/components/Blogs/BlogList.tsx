@@ -10,7 +10,7 @@ type BlogListType={
 
 
 const BlogList = async() => {
-    const blogListData:BlogListType|undefined=await getData('/api/blogs',"blogs");
+    const blogListData:BlogListType|undefined=await getData('api/blogs',"blogs");
 
 
     if(blogListData){

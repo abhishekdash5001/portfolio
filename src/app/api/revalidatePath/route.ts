@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request:NextRequest){
     const path:string|null = request.nextUrl.searchParams.get("path");
-    const secret:string|null = request.nextUrl.searchParams.get("seceret");
+    const secret:string|null = request.nextUrl.searchParams.get("secret");
     if(!path){
      return NextResponse.json({message:"Path is not provided"},{status:400})
     }
