@@ -17,13 +17,14 @@ const PortFolioList = async() => {
              Portfolio
              </b>
             </h2>
-           {data?.map(({companyName,description,companyImage}:portfolioType)=>
-           <div key={companyName}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {data?.map(({companyName,description,companyImage}:portfolioType)=>
+           <div key={companyName} >
                 <h3>
                  {companyName}
                 </h3>
                
-                <Image src={companyImage} alt='cover image' height={200} width={200}  priority/>
+                <Image src={companyImage} alt='cover image' height={400} width={400}  priority/>
        
            
              
@@ -32,6 +33,8 @@ const PortFolioList = async() => {
                 </p>
            </div>
            )}
+            </div>
+          
            </>)
     }else{
         return (<>

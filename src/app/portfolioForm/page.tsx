@@ -2,7 +2,9 @@
 
 'use client'
 import { portfolioAddAction } from '@/actions/portfolioAddAction';
-import { useActionState } from 'react';
+import { CustomToast } from '@/utils/CustomToast';
+import { useActionState, useEffect } from 'react';
+
 
 export type portfolioType={
   errors:string[],
@@ -16,6 +18,11 @@ export default function  PortfolioForm(){
     errors:[],
     message:[]
   })
+  useEffect(()=>{
+    if(portfolioState.errors.length>0){
+      CustomToast({type:'error',messages:portfolioState.errors})
+    }
+  },[portfolioState.errors])
  
     return (
         <>
@@ -48,8 +55,6 @@ export default function  PortfolioForm(){
 
             <button type="submit" >Add </button>
           </form>
-
-          {portfolioState.message}
         </>
     )
 }

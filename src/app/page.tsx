@@ -1,6 +1,6 @@
 
 import type {portfolioType} from "@/type/portfolio"
-import BlogList from '@/components/Blogs/BlogList';
+
 import PortFolioList from '@/components/Portfolios/PortfolioList';
 import { Suspense } from 'react';
 
@@ -27,18 +27,17 @@ export default async function Home() {
  
   
     return (
-      <> 
-      <div>
+      <div> 
+      {/* <div className="">
       <Suspense fallback={<>Loading Blogs ..</>}>
       <BlogList/>
       </Suspense>
-      </div>
+      </div> */}
    
      <Suspense fallback={<>Loading Portfolios ..</>}>
      <PortFolioList/>
      </Suspense>
-
-      </>
+      </div>
       );
   }
  
