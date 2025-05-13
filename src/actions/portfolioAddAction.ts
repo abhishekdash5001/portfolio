@@ -16,14 +16,14 @@ export const portfolioAddAction:portfolioAddActionType= async(_,formData:FormDat
         const image:FormDataEntryValue = companyImage;
         
         if (!image || image.size === 0) {
-            errors.push("Please upload an image")
+         errors.push("Please upload an image")
         }
         if (errors.length > 0) {
             return { errors ,message}
         }
         let imageUrl: string;
     try{
-        imageUrl = await uploadImageToCloudinary(image)
+            imageUrl = await uploadImageToCloudinary(image)
         message.push("Image uploaded Successfully");
         const companyName = formData.get("companyName");
         const companyStartDate = formData.get("companyStartDate");
@@ -80,10 +80,11 @@ export const portfolioAddAction:portfolioAddActionType= async(_,formData:FormDat
   
    
     
-   
-    if(errors.length === 0){
-        redirect("/")
-    }
+   setTimeout(()=>{
+       if(errors.length === 0){
+           redirect("/")
+       }
+   },1000)
     return {
         message,
         errors
